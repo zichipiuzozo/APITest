@@ -37,23 +37,19 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserItemViewHo
     @Override
     public void onBindViewHolder(UserItemViewHolder holder,int position){
         User u = users.get(position);
-        Picasso.with(context)
-                .load(u.avatar_url)
-                .into(holder.ivAvatar);
-        holder.tvLoginName.setText(u.login);
-        holder.tvId.setText(String.valueOf(u.id));
+        holder.tvName.setText(u.name);
+        holder.tvDes.setText(String.valueOf(u.description));
     }
 
     public static class UserItemViewHolder extends RecyclerView.ViewHolder{
-        public TextView tvLoginName;
-        public TextView tvId;
-        public ImageView ivAvatar;
+        public TextView tvName;
+        public TextView tvDes;
+
 
         public UserItemViewHolder(View itemView){
             super(itemView);
-            tvLoginName = (TextView) itemView.findViewById(R.id.tv_login_name);
-            tvId = (TextView) itemView.findViewById(R.id.tv_id);
-            ivAvatar = (ImageView) itemView.findViewById(R.id.iv_avatar);
+            tvName = (TextView) itemView.findViewById(R.id.tv_login_name);
+            tvDes = (TextView) itemView.findViewById(R.id.tv_id);
         }
     }
 }

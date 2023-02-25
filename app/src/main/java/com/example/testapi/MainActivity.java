@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Tao request len server
         Request request = new Request.Builder()
-                .url("https://api.github.com/users")
+                .url("https://api.covid19api.com/")
                 .build();
 
         //Execute request
